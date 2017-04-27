@@ -1,6 +1,6 @@
 <template>
   <div class="star" :class="starType">
-    <span v-for="itemClass in itemClasses" :class="itemClass" class="star-item" track-by="$index"></span>
+    <span v-for="(itemClass,index) in itemClasses" :class="itemClass" class="star-item" key="index"></span>
   </div>
 </template>
 
@@ -9,45 +9,43 @@
   const CLS_ON = 'on';
   const CLS_HALF = 'half';
   const CLS_OFF = 'off';
-
   export default {
     props: {
-      size: {
-        type: Number
-      },
+        size: {
+            type: Number
+        },
       score: {
-        type: Number
+            type: Number
       }
     },
     computed: {
-      starType() {
-        return 'star-' + this.size;
-      },
-      itemClasses() {
-        let result = [];
-        let score = Math.floor(this.score * 2) / 2;
-        let hasDecimal = score % 1 !== 0;
-        let integer = Math.floor(score);
-        for (let i = 0; i < integer; i++) {
-          result.push(CLS_ON);
+        starType() {
+            return 'star-' + this.size;
+        },
+        itemClasses() {
+          let result = [];
+          let score = Math.floor(this.score * 2) / 2;
+          let hasDecimal = score % 1 !== 0;
+          let integer = Math.floor(score);
+          for (let i = 0; i < integer; i++) {
+              result.push(CLS_ON);
+          }
+          if (hasDecimal) {
+              result.push(CLS_HALF);
+          }
+          while (result.length < LENGTH) {
+              result.push(CLS_OFF);
+          }
+          return result;
         }
-        if (hasDecimal) {
-          result.push(CLS_HALF);
-        }
-        while (result.length < LENGTH) {
-          result.push(CLS_OFF);
-        }
-        return result;
-      }
     }
   };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixin.styl"
-
   .star
-    font-size: 0
+     font-size: 18px
     .star-item
       display: inline-block
       background-repeat: no-repeat
@@ -58,7 +56,7 @@
         margin-right: 22px
         background-size: 20px 20px
         &:last-child
-          margin-right: 0
+           margin-right: 0
         &.on
           bg-image('star48_on')
         &.half
@@ -69,7 +67,7 @@
       .star-item
         width: 15px
         height: 15px
-        margin-right: 6px
+        margin-right: 16px
         background-size: 15px 15px
         &:last-child
           margin-right: 0
@@ -93,4 +91,5 @@
           bg-image('star24_half')
         &.off
           bg-image('star24_off')
+
 </style>

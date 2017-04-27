@@ -1,33 +1,25 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
+import VueRouter from 'vue-router';
 import App from './App';
 import goods from 'components/goods/goods';
 import ratings from 'components/ratings/ratings';
 import seller from 'components/seller/seller';
 
-import 'common/stylus/index.styl';
+import './common/stylus/index.styl';
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
-
-let app = Vue.extend(App);
-
-let router = new VueRouter({
-	linkActiveClass: 'active'
+const router = new VueRouter({
+  routes: [
+    { path: '/goods', component: goods },
+    {path: '/ratings', component: ratings},
+    {path: '/seller', component: seller}
+  ]
 });
 
-router.map({
-	'/goods': {
-		component: goods
-	},
-	'/ratings': {
-		component: ratings
-	},
-	'seller': {
-		component: seller
-	}
-});
-
-router.start(app, '#app');
-// router.go('/goods');
+new Vue({
+  router,
+  render: h => h(App)
+}).$mount('#app');
+router.push('/goods');

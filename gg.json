@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "13602f3c-11e4-4dad-806a-4f71576f3a38",
+      "name": "anchor-pc",
+      "folders": [],
+      "requests": [
+        {
+          "id": "d97c64ab-350d-4196-9cac-8538621e9801",
+          "url": "http://localhost:8181/v1/information/listInfos",
+          "method": "POST",
+          "collectionId": "13602f3c-11e4-4dad-806a-4f71576f3a38",
+          "name": "获取所有资讯",
+          "description": "",
+          "headers": "Content-Type: application/json; charset=utf-8",
+          "dataMode": "raw",
+          "data": "{\"currentIndex\":1}"
+        },
+        {
+          "id": "1ef9cf56-faf4-4358-89e8-5f2c18ca6d27",
+          "url": "http://localhost:8181/v1/information/addInfo",
+          "method": "POST",
+          "collectionId": "13602f3c-11e4-4dad-806a-4f71576f3a38",
+          "name": "添加资讯",
+          "description": "",
+          "headers": "Content-Type: application/json; charset=utf-8",
+          "dataMode": "raw",
+          "data": "{\"title\":\"22222\",\"subTitle\":\"fubiaoti\",\"content\":\"\\u4f60\\u597d\\u554a\\u6211222\",\"author\":\"halo\",\"columnId\":1,\"labelId\":1,\"headImage\":\"headImage123.png\",\"faceImage\":\"faceImageaa.png\",\"originalStatus\":\"1\",\"anchorId\":\"1233424\",\"displayMultiple\":2}"
+        },
+        {
+          "id": "285c6da7-87b0-432c-9c0b-c523d74963c6",
+          "url": "http://localhost:8181/v1/information/removeInfo",
+          "method": "POST",
+          "collectionId": "13602f3c-11e4-4dad-806a-4f71576f3a38",
+          "name": "删除资讯",
+          "description": "",
+          "headers": "Content-Type: application/json; charset=utf-8",
+          "dataMode": "raw",
+          "data": "{\"infoId\":\"8923EB8D52F94E2595229E05B8C4091F\"}"
+        },
+        {
+          "id": "41f97816-188a-4012-ad6f-5166d802a8c5",
+          "url": "http://121.41.18.217:8181/v1/information/modifyInfo",
+          "method": "POST",
+          "collectionId": "13602f3c-11e4-4dad-806a-4f71576f3a38",
+          "name": "修改资讯",
+          "description": "",
+          "headers": "Content-Type: application/json; charset=utf-8",
+          "dataMode": "raw",
+          "data": "{\"title\":\"\\u65b0\\u7684\\u4e00\\u5929\",\"subTitle\":\"fubiaoti\",\"content\":\"\\u4f60\\u597d\\u554a\\u6211\\u5c31\\u662f\\u5c4chahaha\",\"author\":\"halo\",\"columnId\":1,\"labelId\":1,\"headImage\":\"hello.png\",\"faceImage\":\"faceImageaa.png\",\"originalStatus\":\"1\",\"anchorId\":\"123\",\"displayMultiple\":3,\"infoId\":\"8923EB8D52F94E2595229E05B8C4091F\"}"
+        }
+      ],
+      "order": [
+        "d97c64ab-350d-4196-9cac-8538621e9801",
+        "1ef9cf56-faf4-4358-89e8-5f2c18ca6d27",
+        "285c6da7-87b0-432c-9c0b-c523d74963c6",
+        "41f97816-188a-4012-ad6f-5166d802a8c5"
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "id": "4951046e-e638-4dfd-bb5b-149e94ab8819",
+      "name": "API-Flow Imports",
+      "values": [],
+      "timestamp": 1492672637571
+    }
+  ]
+}
